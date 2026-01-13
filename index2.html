@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Cumpleaños</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #fce4ec;
+      color: #333;
+      padding: 50px;
+    }
+    #login, #videoSection {
+      max-width: 600px;
+      margin: auto;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 70%;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #f06292;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    h1 {
+      color: #d81b60;
+    }
+    iframe {
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="login">
+    <h1>¡Feliz Cumpleaños!</h1>
+    <p>Por favor, ingresa tu nombre para ver tu sorpresa:</p>
+    <input type="text" id="nameInput" placeholder="Escribe tu nombre aquí">
+    <br>
+    <button onclick="checkName()">Entrar</button>
+  </div>
+
+  <div id="videoSection" style="display:none;">
+    <h2>¡Sorpresa!</h2>
+    <p>Disfruta tu video especial:</p>
+    <!-- Cambia el src por tu enlace de YouTube -->
+<iframe id="birthdayVideo" width="560" height="315" 
+        src="https://youtu.be/TKM5-Rh8ZTY?si=yPh6hgyNF1XSzHIM" 
+        title="Video de cumpleaños" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+</iframe>
+
+  </div>
+
+  <script>
+    function checkName() {
+      const name = document.getElementById("nameInput").value.trim().toLowerCase();
+      const allowedName = "erika misme yanahuaya"; // Cambia esto por el nombre exacto de tu pareja en minúsculas
+
+      if (name === allowedName) {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("videoSection").style.display = "block";
+      } else {
+        alert("Nombre incorrecto. Intenta de nuevo.");
+      }
+    }
+  </script>
+
+</body>
+</html>
